@@ -1,0 +1,103 @@
+// ShopStream typography mixins.
+// Use these — never hand-roll font-size.
+
+@mixin display-xl {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.20;
+}
+
+@mixin display-lg {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@mixin display-md {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.30;
+}
+
+@mixin display-sm {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+@mixin title-md {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@mixin title-sm {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.30;
+}
+
+@mixin body-md {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.50;
+}
+
+@mixin body-sm {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+@mixin price {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.30;
+  font-variant-numeric: tabular-nums;
+}
+
+@mixin price-lg {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.20;
+  font-variant-numeric: tabular-nums;
+}
+
+@mixin caption {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.30;
+}
+
+@mixin caption-sm {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+@mixin uppercase-tag {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.20;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+// note: 15px is a button-only size — see _typography.scss comment in design guide
+@mixin button {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@mixin link {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+}
+
+@mixin nav {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.25;
+}

@@ -1,0 +1,23 @@
+// ShopStream breakpoints.
+
+$bp-tablet: 640px;
+$bp-desktop: 1024px;
+$bp-wide: 1280px;
+
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: $bp-wide) {
+    @content;
+  }
+}

@@ -1,0 +1,72 @@
+// ShopStream scaffold design tokens — production baseline (NOT solution-side).
+// One translation only — every Angular component should consume these vars.
+
+:root {
+  // ── Brand & accent ──────────────────────────────────────────
+  --color-primary:           #0B5FAE;   // ShopStream Blue
+  --color-primary-active:    #084E91;   // press state
+  --color-primary-disabled:  #B5CFE6;
+  --color-primary-soft:      #E8F1FA;   // selected radio card background, inline info
+  --color-on-primary:        #FFFFFF;
+
+  // kept for legacy /promo route — do not delete
+  --color-accent-legacy:     #E5594A;
+
+  // ── Surface ─────────────────────────────────────────────────
+  --color-canvas:            #FFFFFF;
+  --color-surface-soft:      #F6F7F9;
+  --color-surface-strong:    #ECEEF2;
+
+  // ── Hairlines & borders ─────────────────────────────────────
+  --color-hairline:          #DDE2EA;
+  --color-hairline-soft:     #ECEEF2;
+  --color-border-strong:     #B7BDC8;
+
+  // ── Text ───────────────────────────────────────────────────
+  --color-ink:               #1A2330;
+  --color-body:              #3C4554;
+  --color-muted:             #6B7385;
+  --color-muted-soft:        #9098A6;   // placeholders only
+
+  // ── Semantic ───────────────────────────────────────────────
+  --color-success:           #1F7A45;
+  --color-success-soft:      #E4F3EB;
+  --color-warning:           #A55F00;
+  --color-warning-soft:      #FBF1DC;
+  --color-error:             #B0271C;
+  --color-error-soft:        #F8E6E3;
+
+  // ── Scrim ──────────────────────────────────────────────────
+  --color-scrim:             rgba(11, 18, 28, 0.5);
+
+  // ── Radius ─────────────────────────────────────────────────
+  --rounded-xs:              4px;        // legacy: cart-line items, quantity stepper
+  --rounded-sm:              6px;        // primary: buttons, inputs
+  --rounded-md:              12px;       // cards, summary, modals
+  --rounded-lg:              14px;       // reserved, unused in scaffold
+  --rounded-full:            9999px;     // search field, badges, avatars
+
+  // ── Spacing (8px base) ─────────────────────────────────────
+  --space-xs:                4px;
+  --space-sm:                8px;
+  --space-md:                12px;
+  --space-base:              16px;
+  --space-lg:                24px;
+  --space-xl:                32px;
+  --space-xxl:               48px;
+  --space-section:           56px;
+
+  // ── Elevation — two recipes (yes, design debt) ─────────────
+  // Use --shadow-card for anything NEW.
+  --shadow-card:
+    0 1px 2px rgba(11, 18, 28, 0.04),
+    0 2px 8px rgba(11, 18, 28, 0.06);
+  // Still consumed by AccountMenuComponent and CurrencyPickerComponent.
+  --shadow-floating:
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+
+  // ── Typography ─────────────────────────────────────────────
+  --font-family-base: 'Inter', -apple-system, system-ui, 'Segoe UI',
+                      'Helvetica Neue', Arial, sans-serif;
+}

@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "paths": {
+      "@shopstream/shared-types": ["libs/shared-types/src/index.ts"],
+      "@shopstream/shared-types/*": ["libs/shared-types/src/*"],
+      "@shopstream/ui-forms": ["libs/ui/forms/src/index.ts"],
+      "@shopstream/ui-layout": ["libs/ui/layout/src/index.ts"],
+      "@shopstream/ui-feedback": ["libs/ui/feedback/src/index.ts"],
+      "@shopstream/testing": ["libs/testing/src/index.ts"]
+    },
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules", "dist", ".angular", "coverage"]
+}

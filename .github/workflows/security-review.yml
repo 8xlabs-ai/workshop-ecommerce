@@ -1,0 +1,19 @@
+name: Security review
+
+on:
+  pull_request:
+    paths:
+      - 'apps/api/src/modules/payments/**'
+      - 'apps/api/src/middleware/auth.ts'
+      - 'apps/api/src/middleware/rate-limit.ts'
+      - 'apps/api/migrations/**'
+      - 'apps/api/src/config/env.ts'
+
+jobs:
+  flag-for-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require a security reviewer
+        run: |
+          echo "::warning::This PR touches security-sensitive paths (payments, auth, rate-limit, migrations, env)."
+          echo "::warning::Make sure a member of @shopstream/security has approved before merge."

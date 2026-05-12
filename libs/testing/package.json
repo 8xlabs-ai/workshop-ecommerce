@@ -1,0 +1,19 @@
+{
+  "name": "@shopstream/testing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'no lint'",
+    "test": "echo 'no tests'"
+  },
+  "dependencies": {
+    "@shopstream/shared-types": "workspace:*"
+  },
+  "devDependencies": {
+    "msw": "^2.4.0",
+    "typescript": "^5.5.0"
+  }
+}
