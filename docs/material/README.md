@@ -10,7 +10,7 @@ Use these when building new pages so we stay consistent with the existing checko
 - Indigo-pink theme is loaded globally (see `apps/web/src/styles.scss`).
 - All consumers are **standalone** — add Material modules to the component's `imports` array. Never use `NgModule`.
 
-## Components
+## Components — currently in use
 
 | Module | Doc | What it gives you |
 |--------|-----|-------------------|
@@ -23,6 +23,50 @@ Use these when building new pages so we stay consistent with the existing checko
 | `MatRadioModule` | [radio.md](./radio.md) | `mat-radio-group`, `mat-radio-button` |
 | `MatSelectModule` | [select.md](./select.md) | `mat-select`, `mat-option` dropdown |
 | `MatSnackBar` | [snack-bar.md](./snack-bar.md) | toast/snackbar service |
+
+## Components — reference for upcoming work (price tiers, complex layouts)
+
+Not all wired in `apps/web` yet — examples in these docs illustrate the intended pattern for the tier-pricing UI work.
+
+### Data display
+
+| Module | Doc | Use for |
+|--------|-----|---------|
+| `MatTableModule` | [table.md](./table.md) | Tier comparison table, order summaries |
+| `MatListModule` | [list.md](./list.md) | Feature lists on tier cards, nav lists |
+| `MatDividerModule` | [divider.md](./divider.md) | Separators inside tier cards |
+| `MatExpansionModule` | [expansion.md](./expansion.md) | "See all features", FAQ accordions |
+| `MatChipsModule` | [chips.md](./chips.md) | "Most Popular" badges, filter chips |
+| `MatBadgeModule` | [badge.md](./badge.md) | Cart count, "NEW" tier markers |
+
+### Inputs
+
+| Module | Doc | Use for |
+|--------|-----|---------|
+| `MatButtonToggleModule` | [button-toggle.md](./button-toggle.md) | Monthly/Annual segmented control |
+| `MatSlideToggleModule` | [slide-toggle.md](./slide-toggle.md) | Boolean preference toggles |
+| `MatSliderModule` | [slider.md](./slider.md) | Seat count slider for tier pricing |
+| `MatDatepickerModule` | [datepicker.md](./datepicker.md) | Subscription start date, trial range |
+| `MatAutocompleteModule` | [autocomplete.md](./autocomplete.md) | Product search, country picker |
+
+### Navigation
+
+| Module | Doc | Use for |
+|--------|-----|---------|
+| `MatTabsModule` | [tabs.md](./tabs.md) | Tier category switcher (Personal/Team/Enterprise) |
+| `MatStepperModule` | [stepper.md](./stepper.md) | Multi-step tier selection wizard |
+| `MatToolbarModule` | [toolbar.md](./toolbar.md) | Page header, top nav |
+| `MatSidenavModule` | [sidenav.md](./sidenav.md) | Cart drawer, mobile nav |
+| `MatMenuModule` | [menu.md](./menu.md) | Tier row actions, account dropdown |
+
+### Feedback & overlays
+
+| Module | Doc | Use for |
+|--------|-----|---------|
+| `MatDialogModule` | [dialog.md](./dialog.md) | Upgrade confirmation modals |
+| `MatTooltipModule` | [tooltip.md](./tooltip.md) | Feature explanations on tier cards |
+| `MatProgressBarModule` | [progress-bar.md](./progress-bar.md) | Storage/usage indicators |
+| `MatProgressSpinnerModule` | [progress-spinner.md](./progress-spinner.md) | Inline button loaders, card loading |
 
 ## House rules
 
