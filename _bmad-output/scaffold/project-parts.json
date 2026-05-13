@@ -1,0 +1,69 @@
+{
+  "repository_type": "monorepo",
+  "package_manager": "pnpm@9.15.0",
+  "workspace_globs": ["apps/*", "libs/*", "libs/ui/*", "e2e"],
+  "parts": [
+    {
+      "part_id": "api",
+      "name": "@shopstream/api",
+      "root_path": "apps/api",
+      "project_type_id": "backend",
+      "tech_stack": ["Node.js 20", "Express 4.21", "TypeScript 5.5", "Postgres 15", "Redis 7", "Zod 3.23", "JWT", "Pino 9", "OpenTelemetry"],
+      "entry_point": "src/server.ts"
+    },
+    {
+      "part_id": "web",
+      "name": "@shopstream/web",
+      "root_path": "apps/web",
+      "project_type_id": "web",
+      "tech_stack": ["Angular 17.3 (standalone)", "Angular Material 17.3", "NgRx Signals 17", "RxJS 7.8", "OpenTelemetry web"],
+      "entry_point": "src/main.ts"
+    },
+    {
+      "part_id": "ui",
+      "name": "@shopstream/ui-{feedback,forms,layout}",
+      "root_path": "libs/ui",
+      "project_type_id": "library",
+      "tech_stack": ["TypeScript 5.5", "Angular 17 peer"],
+      "sub_packages": [
+        "libs/ui/feedback",
+        "libs/ui/forms",
+        "libs/ui/layout"
+      ]
+    },
+    {
+      "part_id": "shared-types",
+      "name": "@shopstream/shared-types",
+      "root_path": "libs/shared-types",
+      "project_type_id": "library",
+      "tech_stack": ["TypeScript 5.5"]
+    },
+    {
+      "part_id": "testing",
+      "name": "@shopstream/testing",
+      "root_path": "libs/testing",
+      "project_type_id": "library",
+      "tech_stack": ["TypeScript 5.5", "MSW 2.4"]
+    },
+    {
+      "part_id": "e2e",
+      "name": "@shopstream/e2e",
+      "root_path": "e2e",
+      "project_type_id": "library",
+      "tech_stack": ["Playwright 1.47", "TypeScript 5.5"]
+    }
+  ],
+  "integration_points": [
+    { "from": "web", "to": "api", "type": "REST/JSON over HTTP", "details": "ApiService → /api/* (proxied via proxy.conf.json in dev)" },
+    { "from": "web", "to": "shared-types", "type": "TS workspace import" },
+    { "from": "web", "to": "ui", "type": "TS workspace import" },
+    { "from": "api", "to": "shared-types", "type": "TS workspace import" },
+    { "from": "api", "to": "Postgres 15", "type": "pg pool", "details": "DATABASE_URL" },
+    { "from": "api", "to": "Redis 7", "type": "ioredis", "details": "REDIS_URL — rate-limit storage" },
+    { "from": "api", "to": "payx sandbox", "type": "HTTPS via payx-sdk", "details": "PAYX_API_BASE; webhook back via POST /api/payments/webhook" },
+    { "from": "e2e", "to": "web+api (live)", "type": "Playwright driven browser" },
+    { "from": "testing", "to": "web component tests", "type": "MSW in-process mocks" },
+    { "from": "api", "to": "OTLP collector", "type": "OpenTelemetry export" },
+    { "from": "web", "to": "OTLP collector", "type": "OpenTelemetry web export" }
+  ]
+}

@@ -1,0 +1,8 @@
+# BMM Module Configuration
+# Manually installed from BMAD-METHOD GitHub
+
+user_name: Zaghloul-product
+communication_language: English
+document_output_language: English
+output_folder: "{project-root}/_bmad-output"
+project_name: idaratech-workspace
